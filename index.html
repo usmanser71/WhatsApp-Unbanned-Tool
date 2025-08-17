@@ -29,6 +29,21 @@
     <button onclick="sendEmail()">SEND UNBEND</button>
     <button onclick="visitCurrent()">Visit Current</button>
     <button onclick="joinChannel()">Join WhatsApp Channel</button>
+    <div style="text-align:center; margin-top:20px;">
+  <p style="font-size:18px; color:white;">
+    Total Visitors: <span id="visit-count">0</span>
+  </p>
+</div>
+
+<script>
+  // Local Storage استعمال کر کے Counter بڑھائیں گے
+  if (localStorage.getItem('visits')) {
+    localStorage.setItem('visits', Number(localStorage.getItem('visits')) + 1);
+  } else {
+    localStorage.setItem('visits', 1);
+  }
+  document.getElementById('visit-count').innerText = localStorage.getItem('visits');
+</script>
     
     <div class="banner">
   <img src=https://i.postimg.cc/Lsjh7t2t/Screenshot-20250818-003115-01.jpg" alt="Banner" style="width:100%; border-radius:12px;">
